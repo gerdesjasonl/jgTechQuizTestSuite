@@ -1,3 +1,4 @@
+import { mount } from "cypress/react";
 import Quiz from "../../client/src/components/Quiz";
 
 const questions = [
@@ -47,7 +48,7 @@ const questions = [
 describe("<Quiz />", () => {
   it("should render the Quiz component", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<Quiz questions={questions} />);
+    mount(<Quiz questions={questions} />);
     cy.get(".card").should("have.length", 1);
   });
 
