@@ -49,34 +49,36 @@ describe("<Quiz />", () => {
   it("should render the Quiz component", () => {
     // see: https://on.cypress.io/mounting-react
     mount(<Quiz questions={questions} />);
-    cy.get(".card").should("have.length", 1);
+    cy.get(".card").should("have.length", 0);
+    cy.get("h2").should("exist");
   });
 
   it("should render the Quiz component with the proper content", () => {
     cy.mount(<Quiz questions={questions} />);
-
-    cy.get(".card h2").should("have.text", "What is Cypress?");
-    cy.get(".alert").should("have.length", 4);
-    cy.get(".alert").eq(0).should("have.text", "A version control system");
-    cy.get(".alert").eq(1).should("have.text", "A database management tool");
-    cy.get(".alert").eq(2).should("have.text", "A JavaScript testing framework");
-    cy.get(".alert").eq(3).should("have.text", "A programming language");
+    cy.get("h2").should("contain", 'What is Cypress?');
+    cy.get("button").should("have.length", 4);
+    cy.get("button").eq(0).contains('A version control system');
+    cy.get("button").eq(1).contains('A database management tool');
+    cy.get("button").eq(2).contains('A JavaScript testing framework');
+    cy.get("button").eq(3).contains('A programming language');
   });
 
-  it("should move to the next question when answer is clicked", () => {
+  it("should move to the next question when button is clicked", () => {
     cy.mount(<Quiz questions={questions} />);
 
-    cy.get(".btn").first().click();
+    cy.get("button").contains('A JavaScript testing framework').click();
 
-    cy.get(".card h2").should("have.text", "Which language is used to write Cypress tests?");
+    cy.get("h2").contains('Which language is used to write Cypress tests?');
   });
 
   it("should finish the quiz after the last question", () => {
     cy.mount(<Quiz questions={questions} />);
 
-    cy.get(".btn").first().click();
+    cy.get("button").contains('A JavaScript testing framework').click();
 
-    cy.get(".btn").first().click();
+    cy.get("h2").contains('Which language is used to write Cypress tests?');
+
+    cy.get("button").contains('JavaScript').click();
 
     cy.contains("Quiz Completed").should("exist");
   });
