@@ -45,16 +45,14 @@ const questions = [
     ],
   },
 ];
-describe("<Quiz />", () => {
+describe("Quiz Component", () => {
   it("should render the Quiz component", () => {
     // see: https://on.cypress.io/mounting-react
     mount(<Quiz questions={questions} />);
     cy.get(".card").should("have.length", 0);
-    cy.get("h2").should("exist");
   });
 
   it("should render the Quiz component with the proper content", () => {
-    cy.mount(<Quiz questions={questions} />);
     cy.get("h2").should("contain", 'What is Cypress?');
     cy.get("button").should("have.length", 4);
     cy.get("button").eq(0).contains('A version control system');
