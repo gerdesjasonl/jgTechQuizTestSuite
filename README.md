@@ -20,18 +20,7 @@
         <a href="#questions">Questions</a>
     </ul>
     <h3 style="background-color: black;text-align: center;color:azure;" id="installation">Installation Instructions</h3>
-    <p id="installEntry">Open a terminal on the root folder and run 
-    1. npm i 
-    2. npm run build 
-    3. npm run start:dev - this step will open the quiz in the browser 
-    --IMPORTANT-- 
-    4. Leave your terminal and browser OPEN, then open another terminal and 
-    npm run cypress 
-    to open the Cypress test suite.
-    
-    --CYPRESS--
-    Select either e2e or component test to run test and view results.
-    </p>
+    <p id="installEntry">Open a terminal on the root folder and run 1. npm i 2. npm run build 3. npm run start:dev - this step will open the quiz in the browser --IMPORTANT-- 4. Leave your terminal and browser OPEN, then open another terminal and npm run cypress to open the Cypress test suite.--CYPRESS--Select either e2e or component test to run test and view results.</p>
     <h3 style="background-color: black;text-align: center;color:azure;" id="usage">Usage Information</h3>
     <p id="usageEntry">A video demonstration can be found here: <a href = "https://drive.google.com/file/d/1F7S2v3LNLUPomlprh-cZbELpksUn-1_R/view">jgTechQuizTestSuite Demo Video</a></p>
     <h3 style="background-color: black;text-align: center;color:azure;" id="license">License</h3>
