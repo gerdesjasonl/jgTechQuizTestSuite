@@ -30,12 +30,12 @@
   "files": [],
   "references": [
     {
-      "path": "./server"
+      "path": "../server"
     },
     {
-      "path": "./client"
+      "path": "../client"
     },
     {
-      "path": "./cypress"
+      "path": "../cypress"
     }]
 }
